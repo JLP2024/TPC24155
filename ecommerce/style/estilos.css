@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;500;600;700;800&family=Teko:wght@300..700&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Advent Pro", sans-serif;
+    background:
+    radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    
+}
+
+.main-body {
+    /*background-color: rgba(171, 176, 176, 0.944);
+    background-image: linear-gradient(rgba(231, 231, 231, 0.1),
+            rgba(231, 231, 231, 0.1)),
+        url(../img/portada1.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    min-height: 80vh;*/
+}
+
+#logo-body {
+    width: 40%;
+    height: 60%;
+    margin-left: 200px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
+        url(../img/headers.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#imglog {
+    width: 50px;
+    height: 100px;
+    padding-top: 0;
+    margin: 0;
+}
+
+.logo {
+    color: antiquewhite;
+    font-size: 25px;
+    font-weight: 400;
+
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 5px 15px 5px 15px ;
+   
+    color: antiquewhite;
+    display: block;
+    font-weight: 200;
+
+
+}
+
+.menu .navbar ul li a:hover {
+    padding: 5px 15px 0px 15px;
+    color: rgb(216, 158, 78);
+    animation-name: cambiarColor;
+    animation-duration: 1s;
+    transform: scale(1.3, 1.3);
+    color: rgb(219, 120, 40);
+    display: block;
+}
+
+@keyframes cambiarColor {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    /* Primer fotograma */
+    /*50% {transform: scale(1.2,1.2); }*/
+    /* Segundo fotograma */
+    100% {
+        transform: scale(1.3, 1.3);
+        color: rgb(219, 120, 40);
+    }
+
+    /* Último fotograma */
+}
+
+#menu {
+    display: none;
+}
+
+.icono-menu {
+    width: 25px;
+
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.pie {
+    background-color: darkslategrey;
+    min-height: 10vh;
+}
+
+h3::first-letter {
+    color: red;
+
+}
+
+/* menu desplegable */
+
+.menu .navbar ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    
+    padding: 0;
+}
+
+/* items del menu desplegable */
+
+.menu ul ul li {
+    float: none;
+    width: 80px;
+}
+
+/* enlaces de los items del menu desplegable */
+
+.menu ul ul a {
+    height: 25px;
+    /*line-height: 100%;*/
+    padding: 0;
+}
+
+/* items del menu desplegable al pasar el ratón */
+
+.menu .navbar ul .producto:hover ul {
+    display:block;
+    animation-name: cambiarescala;
+    animation-duration: 1s;
+}
+@keyframes cambiarescala {
+    0% {
+       
+        transform: scale(0.1,0.1);
+    }
+
+    /* Primer fotograma */
+    /*50% {transform: scale(1.2,1.2); }*/
+    /* Segundo fotograma */
+    100% {
+        transform: scale(1, 1);
+        
+    }
+
+    /* Último fotograma */
+}
+
+.menu .navbar ul .submenu:hover~.producto{
+    --calor: red;
+
+}
+
+@media(max-width:990px) {
+    .main-body {
+        background-image: none;
+        background-color: rgba(171, 176, 176, 0.944);
+    }
+
+    .menu {
+        padding: 30px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: darkslategray;
+        display: none;
+    }
+
+    .mennu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked~.navbar {
+        display: initial;
+    }
+}
