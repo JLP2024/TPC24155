@@ -178,9 +178,7 @@ body {
 .container {
     
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: aquamarine;
-  
+    grid-template-columns: repeat(3, 1fr);  
 }
 
 
